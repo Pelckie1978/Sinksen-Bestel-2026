@@ -152,11 +152,39 @@ footer b{color:var(--g)}
 <script>
 const K={u:'loc2_u',i:'loc2_i',c:'loc2_c',h:'loc2_h',o:'loc2_o',cats:'loc2_cats'};
 const DEF_CATS=['Bier','Wijn','Fris','Chips','Leeggoed'];
-const DEF=[['Bavik Pils',4,'Bier'],['Petrus Blond',8,'Bier'],['Petrus Tripel',8,'Bier'],['Fruitbier Rosé',4,'Bier'],['Bavik 0.0',4,'Bier'],['Kwaremont 0.0',8,'Bier'],['Wijn Rosé',8,'Wijn'],['Wijn wit',8,'Wijn'],['Wijn Rood',8,'Wijn'],['Cava',9,'Wijn'],['Fles Wijn (gn leeggoed)',24,'Wijn'],['Fles Cava (gn leeggoed)',30,'Wijn'],['Plat water',4,'Fris'],['Bruis water',4,'Fris'],['Cola',4,'Fris'],['Cola Zero',4,'Fris'],['Limonade',4,'Fris'],['Ice Tea',4,'Fris'],['Chips Paprika',2,'Chips'],['Chips Zout',2,'Chips'],['Leeggoed +1',1,'Leeggoed'],['Leeggoed +2',2,'Leeggoed'],['Leeggoed +3',3,'Leeggoed'],['Leeggoed -1',-1,'Leeggoed'],['Leeggoed -2',-2,'Leeggoed'],['Leeggoed -3',-3,'Leeggoed']].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
-let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];,['Leeggoed +1',1,'Leeggoed']].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
-let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
-let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
-let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];
+
+const DEF=[
+  ['Bavik Pils',4,'Bier'],
+  ['Petrus Blond',8,'Bier'],
+  ['Petrus Tripel',8,'Bier'],
+  ['Fruitbier Rosé',4,'Bier'],
+  ['Bavik 0.0',4,'Bier'],
+  ['Kwaremont 0.0',8,'Bier'],
+
+  ['Wijn Rosé',8,'Wijn'],
+  ['Wijn wit',8,'Wijn'],
+  ['Wijn Rood',8,'Wijn'],
+  ['Cava',9,'Wijn'],
+  ['Fles Wijn (gn leeggoed)',24,'Wijn'],
+  ['Fles Cava (gn leeggoed)',30,'Wijn'],
+
+  ['Plat water',4,'Fris'],
+  ['Bruis water',4,'Fris'],
+  ['Cola',4,'Fris'],
+  ['Cola Zero',4,'Fris'],
+  ['Limonade',4,'Fris'],
+  ['Ice Tea',4,'Fris'],
+
+  ['Chips Paprika',2,'Chips'],
+  ['Chips Zout',2,'Chips'],
+
+  ['Leeggoed +1',1,'Leeggoed'],
+  ['Leeggoed +2',2,'Leeggoed'],
+  ['Leeggoed +3',3,'Leeggoed'],
+  ['Leeggoed -1',-1,'Leeggoed'],
+  ['Leeggoed -2',-2,'Leeggoed'],
+  ['Leeggoed -3',-3,'Leeggoed']
+].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
 const baseColors=[['#f59e0b','#f97316'],['#a855f7','#ec4899'],['#22d3ee','#38bdf8'],['#fb7185','#f43f5e'],['#F7B733','#e7a623'],['#4ade80','#22c55e'],['#60a5fa','#2563eb'],['#facc15','#ca8a04']];
 const euro=n=>Number(n).toFixed(2), id=()=>Math.random().toString(16).slice(2)+Date.now(), tm=s=>{let d=new Date(s);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
 function colorFor(cat){let idx=categories.indexOf(cat);return baseColors[(idx<0?0:idx)%baseColors.length]}
