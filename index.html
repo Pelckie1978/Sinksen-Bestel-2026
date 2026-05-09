@@ -150,7 +150,7 @@ footer b{color:var(--g)}
 <div class="modal" id="nameModal"><div class="card"><div class="name">Welkom 👋</div><label>Jouw naam</label><input id="nameInput"><div class="row" style="justify-content:flex-end;margin-top:12px"><button class="primary" onclick="saveName()">Start</button></div></div></div>
 
 <script>
-const K={u:'loc2_u',i:'loc2_i',c:'loc2_c',h:'loc2_h',o:'loc2_o',cats:'loc2_cats'};
+const K={u:'sinksen2026_u',i:'sinksen2026_i',c:'sinksen2026_c',h:'sinksen2026_h',o:'sinksen2026_o',cats:'sinksen2026_cats'};
 const DEF_CATS=['Bier','Wijn','Fris','Chips','Leeggoed'];
 
 const DEF=[
@@ -185,6 +185,7 @@ const DEF=[
   ['Leeggoed -2',-2,'Leeggoed'],
   ['Leeggoed -3',-3,'Leeggoed']
 ].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
+let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];
 const baseColors=[['#f59e0b','#f97316'],['#a855f7','#ec4899'],['#22d3ee','#38bdf8'],['#fb7185','#f43f5e'],['#F7B733','#e7a623'],['#4ade80','#22c55e'],['#60a5fa','#2563eb'],['#facc15','#ca8a04']];
 const euro=n=>Number(n).toFixed(2), id=()=>Math.random().toString(16).slice(2)+Date.now(), tm=s=>{let d=new Date(s);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
 function colorFor(cat){let idx=categories.indexOf(cat);return baseColors[(idx<0?0:idx)%baseColors.length]}
