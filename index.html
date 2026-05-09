@@ -87,7 +87,7 @@ footer b{color:var(--g)}
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo"><img src="icon512.png" alt=""></div><div><h1>Rotary Sinksenapp</h1><div class="sub">Lokale bestelapp • zonder Supabase</div></div></div>
+  <div class="brand"><div class="logo"><img src="icon512.png" alt=""></div><div><h1>Rotary Sinksenapp</h1><div class="sub">Lokale bestelapp</div></div></div>
   <div class="userchip"><span class="pill">👤 <span id="user">—</span></span><span class="pill okpill">🧾 Bestelling <span id="ord">1</span></span><button class="ghost" onclick="openName()">Wijzig naam</button></div>
 </header>
 <div class="tabs" id="tabs"></div>
@@ -151,8 +151,11 @@ footer b{color:var(--g)}
 
 <script>
 const K={u:'loc2_u',i:'loc2_i',c:'loc2_c',h:'loc2_h',o:'loc2_o',cats:'loc2_cats'};
-const DEF_CATS=['Bier','Wijn','Fris','Chips'];
-const DEF=[['Bier',3,'Bier'],['Speciaalbier',3.5,'Bier'],['Wijn rood',3.5,'Wijn'],['Wijn wit',3.5,'Wijn'],['Cola',2.5,'Fris'],['Fanta',2.5,'Fris'],['Ice Tea',2.5,'Fris'],['Water',2.5,'Fris'],['Chips',2,'Chips']].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
+const DEF_CATS=['Bier','Wijn','Fris','Chips','Leeggoed'];
+const DEF=[['Bavik Pils',4,'Bier'],['Petrus Blond',8,'Bier'],['Petrus Tripel',8,'Bier'],['Fruitbier Rosé',4,'Bier'],['Bavik 0.0',4,'Bier'],['Kwaremont 0.0',8,'Bier'],['Wijn Rosé',8,'Wijn'],['Wijn wit',8,'Wijn'],['Wijn Rood',8,'Wijn'],['Cava',9,'Wijn'],['Fles Wijn (gn leeggoed)',24,'Wijn'],['Fles Cava (gn leeggoed)',30,'Wijn'],['Plat water',4,'Fris'],['Bruis water',4,'Fris'],['Cola',4,'Fris'],['Cola Zero',4,'Fris'],['Limonade',4,'Fris'],['Ice Tea',4,'Fris'],['Chips Paprika',2,'Chips'],['Chips Zout',2,'Chips'],['Leeggoed +1',1,'Leeggoed'],['Leeggoed +2',2,'Leeggoed'],['Leeggoed +3',3,'Leeggoed'],['Leeggoed -1',-1,'Leeggoed'],['Leeggoed -2',-2,'Leeggoed'],['Leeggoed -3',-3,'Leeggoed']].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
+let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];,['Leeggoed +1',1,'Leeggoed']].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
+let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
+let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];].map((x,n)=>({id:'d'+n,name:x[0],price:x[1],cat:x[2]}));
 let user='',items=[],cart=[],hist=[],order=1,view='Bier',categories=[];
 const baseColors=[['#f59e0b','#f97316'],['#a855f7','#ec4899'],['#22d3ee','#38bdf8'],['#fb7185','#f43f5e'],['#F7B733','#e7a623'],['#4ade80','#22c55e'],['#60a5fa','#2563eb'],['#facc15','#ca8a04']];
 const euro=n=>Number(n).toFixed(2), id=()=>Math.random().toString(16).slice(2)+Date.now(), tm=s=>{let d=new Date(s);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
